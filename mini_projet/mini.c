@@ -10,10 +10,11 @@ int main(){
     printf("\n\t**********MENU DE MANIGEMENT*********\n");
     printf("\t1.Ajouter un livre au stock.\n");
     printf("\t2.Afficher tous les livres disponibles.\n");
-    printf("\t3.Rechercher un livre par son titre.\n");
+    printf("\t3.Rechercher un livre par ISBN.\n");
     printf("\t4.Mettre a jour la quantite d'un livre.\n");
     printf("\t5.Supprimer un livre du stock.\n");
     printf("\t6.Afficher le nombre total de livres en stock.\n");
+    printf("\t7.sorting.\n");
     printf("\t7.Enter zero to Exite\n");
     
     printf("\nEnter le choix:");
@@ -53,7 +54,10 @@ int main(){
                   printf(" totale of books : %d",all_book);
                   printf("\n----------------- END ----------------\n");
                   break;
-                 
+        case 7 :  printf("\n*************** START ****************\n");
+                  sorting(livres,count);
+                  printf("\n----------------- END ----------------\n");
+                  break;
         case 0 : printf("Thanks for using our program!\n");
                  printf("\n----------------- END ----------------\n");
                  break;
