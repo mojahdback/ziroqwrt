@@ -64,7 +64,7 @@ void rechercher(livre arr[],int count){
               printf("\tAutour=> %s\n",arr[i].auteur);
               printf("\tPrix => %.2f\n",arr[i].prix);
               printf("\tQuantity => %d\n",arr[i].quantite);
-              printf("\tL'ISBN => %d-\n",arr[mid].isbn);
+              printf("\tL'ISBN => %d\n",arr[mid].isbn);
               printf("************ FOUND IT **************\n");
               verif =1;
               i++;
@@ -169,12 +169,12 @@ void sort_isbn(livre arr[], int count){
     livre temp;
 
     for(i=0;i<count -1;i++){
-        for(j=i+1;j<count;j++){
-            if(arr[i].isbn> arr[j].isbn ){
+        for(j= 0;j<count -1-i;j++){
+            if(arr[j].isbn> arr[j+1].isbn ){
 
-                temp = arr[i];
-                arr[i] = arr[j];
-                arr[j] = temp;
+                temp = arr[j];
+                arr[j] = arr[j+1];
+                arr[j+1] = temp;
 
             }
         }
@@ -197,39 +197,34 @@ void sorting(livre arr[],int count ){
            {
               livre temp;
               for(i=0;i<count -1 ;i++){
-                for(j=i+1;j<count;j++){
-                    if(arr[i].titre > arr[j].titre){
-                         temp = arr[i];
-                          arr[i] = arr[j];
-                          arr[j] = temp;   
+                for(j=0;j<count -i-1;j++){
+                    if(arr[j].titre > arr[j+1].titre){
+                         temp = arr[j];
+                          arr[j] = arr[j+1];
+                          arr[j+1] = temp;   
                     }       
                  }
                } 
+            
             }   
-            afficher(arr,count); 
+     
             if(b != 1)
             {
                      livre temp;
                       for(i=0;i<count -1 ;i++){
-                        for(j=i+1;j<count;j++){
-                           if(arr[i].titre < arr[j].titre){
-                          temp = arr[i];
-                          arr[i] = arr[j];
-                          arr[j] = temp;  
+                        for(j=0;j<count -i-1;j++){
+                           if(arr[j].titre < arr[j+1].titre){
+                          temp = arr[j];
+                          arr[j] = arr[j+1];
+                          arr[j+1] = temp;  
                          }
                         }
                       }
-                
-
             }
-            afficher(arr,count); 
-
-               
-
-
-}
- if(n == 2){
-          int b;
+    }
+      
+    if(n == 2){
+            int b;
            printf("choose number:\n");
            printf("1 :  croissant  or 2 : decroissant :");
            scanf("%d",&b);
@@ -237,33 +232,32 @@ void sorting(livre arr[],int count ){
            {
               livre temp;
               for(i=0;i<count -1 ;i++){
-                for(j=i+1;j<count;j++){
-                    if(arr[i].quantite > arr[j].quantite){
-                         temp = arr[i];
-                          arr[i] = arr[j];
-                          arr[j] = temp;   
-                    }
-                         
+                for(j=0;j<count - i - 1;j++){
+                    if(arr[j].quantite > arr[j+1].quantite){
+                         temp = arr[j];
+                          arr[j] = arr[j+1];
+                          arr[j+1] = temp;   
+                    }     
                 }
                } 
+      
             } 
-            afficher(arr,count);    
+            
             if(b != 1)
             {
                      livre temp;
                       for(i=0;i<count -1 ;i++){
-                        for(j=i+1;j<count;j++){
-                           if(arr[i].quantite < arr[j].quantite){
-                          temp = arr[i];
-                          arr[i] = arr[j];
-                          arr[j] = temp;  
+                        for(j=0;j<count -i -1;j++){
+                           if(arr[j].quantite < arr[j+1].quantite){
+                          temp = arr[j];
+                          arr[j] = arr[j+1];
+                          arr[j+1] = temp;  
                          }
                         }
                       }
-
-
             }
-            afficher(arr,count); 
                
-}
+    }
+    afficher(arr,count); 
+    
 }
